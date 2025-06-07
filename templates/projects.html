@@ -1,0 +1,633 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="projects-section">
+    <div class="container">
+        <h1 class="section-title animate-on-scroll">My Projects</h1>
+        
+        <div class="project-filters animate-on-scroll">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th-large"></i>
+                <span>All</span>
+            </button>
+            <button class="filter-btn" data-filter="python">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+            </button>
+            <button class="filter-btn" data-filter="web">
+                <i class="fas fa-globe"></i>
+                <span>Web Development</span>
+            </button>
+            <button class="filter-btn" data-filter="ai">
+                <i class="fas fa-brain"></i>
+                <span>AI/ML</span>
+            </button>
+        </div>
+
+        <div class="project-grid">
+            <!-- File Compression Project -->
+            <div class="project-card animate-on-scroll" data-category="python" data-modal="compression-modal">
+                <div class="project-image-container">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-tooltip="View Details">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a href="https://github.com/yourusername/file-compression" class="project-link" data-tooltip="View Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">File Compression System</h3>
+                    <p class="project-description">A file compression and decompression system using Huffman encoding algorithm.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Huffman Encoding</span>
+                        <span class="tech-tag">Data Structures</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaf Detection System -->
+            <div class="project-card animate-on-scroll" data-category="python ai" data-modal="leaf-modal">
+                <div class="project-image-container">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-tooltip="View Details">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a href="https://github.com/yourusername/leaf-detection" class="project-link" data-tooltip="View Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Leaf Detection System</h3>
+                    <p class="project-description">Computer vision system for detecting and analyzing plant leaves using OpenCV.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Computer Vision</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Her Shield Web App -->
+            <div class="project-card animate-on-scroll" data-category="web" data-modal="hershield-modal">
+                <div class="project-image-container">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-tooltip="View Details">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a href="https://github.com/yourusername/her-shield" class="project-link" data-tooltip="View Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://hershield-demo.com" class="project-link" data-tooltip="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Her Shield Web App</h3>
+                    <p class="project-description">A web application focused on women's safety and empowerment.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Assistant -->
+            <div class="project-card animate-on-scroll" data-category="web" data-modal="voice-modal">
+                <div class="project-image-container">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-tooltip="View Details">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a href="https://github.com/yourusername/voice-assistant" class="project-link" data-tooltip="View Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://voice-assistant-demo.com" class="project-link" data-tooltip="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Voice Assistant</h3>
+                    <p class="project-description">Interactive voice assistant built with web technologies.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Modals -->
+<!-- File Compression Modal -->
+<div id="compression-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <h2>File Compression System</h2>
+            <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Huffman Encoding</span>
+                <span class="tech-tag">Data Structures</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <img src="{{ url_for('static', filename='images/projects/compression-full.jpg') }}" alt="File Compression Full" class="modal-image">
+            <div class="project-details">
+                <h3>Project Overview</h3>
+                <p>An efficient file compression and decompression system implementing the Huffman encoding algorithm. Features include:</p>
+                <ul>
+                    <li>Lossless compression using Huffman encoding</li>
+                    <li>Support for various file types</li>
+                    <li>Efficient compression ratio</li>
+                    <li>Fast decompression process</li>
+                    <li>User-friendly command-line interface</li>
+                </ul>
+                <h3>Technical Details</h3>
+                <ul>
+                    <li>Implemented Huffman tree data structure</li>
+                    <li>Used bit manipulation for efficient storage</li>
+                    <li>Optimized for both small and large files</li>
+                    <li>Includes progress tracking and error handling</li>
+                </ul>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/yourusername/file-compression" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Leaf Detection Modal -->
+<div id="leaf-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <h2>Leaf Detection System</h2>
+            <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">Computer Vision</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <img src="{{ url_for('static', filename='images/projects/leaf-full.jpg') }}" alt="Leaf Detection Full" class="modal-image">
+            <div class="project-details">
+                <h3>Project Overview</h3>
+                <p>A computer vision system that detects and analyzes plant leaves using OpenCV. Features include:</p>
+                <ul>
+                    <li>Real-time leaf detection</li>
+                    <li>Leaf shape and size analysis</li>
+                    <li>Color and texture analysis</li>
+                    <li>Plant health assessment</li>
+                    <li>User-friendly interface</li>
+                </ul>
+                <h3>Technical Details</h3>
+                <ul>
+                    <li>Implemented using OpenCV for image processing</li>
+                    <li>Used contour detection for leaf identification</li>
+                    <li>Color segmentation for health analysis</li>
+                    <li>Real-time processing capabilities</li>
+                </ul>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/yourusername/leaf-detection" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Her Shield Modal -->
+<div id="hershield-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <h2>Her Shield Web App</h2>
+            <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <img src="{{ url_for('static', filename='images/projects/hershield-full.jpg') }}" alt="Her Shield Full" class="modal-image">
+            <div class="project-details">
+                <h3>Project Overview</h3>
+                <p>A web application dedicated to women's safety and empowerment. Features include:</p>
+                <ul>
+                    <li>Emergency contact system</li>
+                    <li>Location sharing</li>
+                    <li>Safety tips and resources</li>
+                    <li>Community support network</li>
+                    <li>Real-time alerts</li>
+                </ul>
+                <h3>Technical Details</h3>
+                <ul>
+                    <li>Responsive design for all devices</li>
+                    <li>Geolocation services integration</li>
+                    <li>Real-time notifications</li>
+                    <li>Secure user authentication</li>
+                </ul>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/yourusername/her-shield" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+                <a href="https://hershield-demo.com" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Voice Assistant Modal -->
+<div id="voice-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <h2>Voice Assistant</h2>
+            <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <img src="{{ url_for('static', filename='images/projects/voice-full.jpg') }}" alt="Voice Assistant Full" class="modal-image">
+            <div class="project-details">
+                <h3>Project Overview</h3>
+                <p>An interactive voice assistant built with web technologies. Features include:</p>
+                <ul>
+                    <li>Voice command recognition</li>
+                    <li>Natural language processing</li>
+                    <li>Task automation</li>
+                    <li>Customizable commands</li>
+                    <li>User-friendly interface</li>
+                </ul>
+                <h3>Technical Details</h3>
+                <ul>
+                    <li>Web Speech API integration</li>
+                    <li>Responsive voice interface</li>
+                    <li>Custom command system</li>
+                    <li>Cross-browser compatibility</li>
+                </ul>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/yourusername/voice-assistant" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+                <a href="https://voice-assistant-demo.com" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .projects-section {
+        padding: 4rem 2rem;
+        background: var(--bg-primary);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 2.5rem;
+        color: var(--text-primary);
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+
+    .project-filters {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        background: white;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .filter-btn i {
+        font-size: 1.1rem;
+        color: var(--primary-color);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .filter-btn:hover i, .filter-btn.active i {
+        color: white;
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-image-container {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16/9;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-image {
+        transform: scale(1.1);
+    }
+
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
+
+    .project-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .project-link {
+        color: white;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .project-link:hover {
+        transform: translateY(-3px);
+        color: var(--primary-color);
+    }
+
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+    }
+
+    .project-description {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+        padding: 0.3rem 0.8rem;
+        background: var(--bg-secondary);
+        color: var(--primary-color);
+        border-radius: 15px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+    .tech-tag:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .project-stats {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        border-top: 1px solid var(--bg-secondary);
+    }
+
+    .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .stat i {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+    }
+
+    .stat span {
+        font-weight: bold;
+        color: var(--text-primary);
+    }
+
+    .stat small {
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+    }
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .project-filters {
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const filter = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 0);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        });
+    });
+
+    // Scroll animation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        observer.observe(element);
+    });
+
+    // Modal functionality
+    const modalTriggers = document.querySelectorAll('[data-modal]');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.modal-close');
+
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const modalId = trigger.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // Close modal when clicking outside
+    modals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+    });
+});
+</script>
+{% endblock %} 

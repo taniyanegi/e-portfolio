@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}Certifications - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="certifications-section">
+    <h1 class="section-title">Certifications</h1>
+    <div class="certifications-grid">
+        <div class="certification-card">
+            <div class="certification-icon">
+                <i class="fas fa-certificate"></i>
+            </div>
+            <div class="certification-content">
+                <h3>AWS Certified Cloud Practitioner</h3>
+                <h4>Amazon Web Services (AWS)</h4>
+                <p class="certification-date">Issued: January 2025</p>
+                <p class="certification-description">
+                    Demonstrated foundational knowledge of AWS Cloud concepts, core services, security, architecture, pricing, and support.
+                </p>
+                <div class="certification-details">
+                    <p><strong>Credential URL:</strong> <a href="https://drive.google.com/file/d/183nEQOkJFljtVgKKPeu356-fc_8xkCCq/view?usp=drive_link" target="_blank">View Credential</a></p>
+                    <p><strong>Skills Covered:</strong></p>
+                    <ul>
+                        <li>AWS Cloud Concepts</li>
+                        <li>Security and Compliance</li>
+                        <li>Technology</li>
+                        <li>Billing and Pricing</li>
+                    </ul>
+                </div>
+                <a href="https://drive.google.com/file/d/183nEQOkJFljtVgKKPeu356-fc_8xkCCq/view?usp=drive_link" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    View Certificate
+                </a>
+            </div>
+        </div>
+
+        <div class="certification-card">
+            <div class="certification-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="certification-content">
+                <h3>Hackathon: Hershield Web App</h3>
+                <h4>[Issuing Organization]</h4>
+                <p class="certification-date">Issued: 12 March 2025</p>
+                <p class="certification-description">
+                    Participated in a hackathon and contributed to building the Hershield web application.
+                </p>
+                <div class="certification-details">                    <p><strong>Certificate Link:</strong> <a href="https://drive.google.com/file/d/1qpfoPeHJt8qvUH_1cz3JgudsabGarU9M/view?usp=sharing" target="_blank">View Certificate</a></p>
+                    <p><strong>Skills Used:</strong></p>
+                    <ul>
+                        <li>HTML,CSS,JS</li>
+                        <li>Python</li>
+                        <li>MOngoDB</li>
+                    </ul>
+                </div>
+                <a href="https://drive.google.com/file/d/1qpfoPeHJt8qvUH_1cz3JgudsabGarU9M/view?usp=sharing" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    View Certificate
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.certifications-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.certification-card {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certification-icon {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.certification-content {
+    padding: 2rem;
+}
+
+.certification-content h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-content h4 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-date {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.certification-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.certification-details {
+    background-color: rgba(139, 92, 246, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.certification-details ul {
+    list-style-type: none;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.certification-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-details li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %} 

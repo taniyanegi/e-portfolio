@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+        <h1 class="section-title animate-on-scroll">Get in Touch</h1>
+        
+        <div class="contact-content">
+            <div class="contact-info animate-on-scroll">
+                <h2>Let's Connect</h2>
+                <p class="lead">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:your.email@example.com">taniyanegi1600@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Jolly Grant, Uttarakhand, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Availability</h3>
+                            <p>Available for freelance work</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-container animate-on-scroll">
+                <form id="contact-form" method="POST" action="{{ url_for('contact') }}" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-input" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .contact-section {
+        padding: 4rem 0;
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 2rem;
+    }
+
+    .contact-info {
+        padding-right: 2rem;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+    }
+
+    .contact-details {
+        margin-bottom: 2rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-top: 0.25rem;
+    }
+
+    .contact-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .contact-item a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color var(--transition-speed);
+    }
+
+    .contact-item a:hover {
+        color: var(--primary-color);
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--bg-secondary);
+        color: var(--text-color);
+        transition: all var(--transition-speed);
+    }
+
+    .social-link:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    .contact-form-container {
+        background-color: var(--bg-secondary);
+        padding: 2rem;
+        border-radius: 12px;
+    }
+
+    .contact-form {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid var(--border-color);
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color var(--transition-speed);
+        background-color: white;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .form-input.error {
+        border-color: var(--error-color);
+    }
+
+    .error-message {
+        color: var(--error-color);
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+
+    textarea.form-input {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .btn-primary:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info {
+            padding-right: 0;
+        }
+
+        .contact-form-container {
+            padding: 1.5rem;
+        }
+    }
+</style>
+{% endblock %} 

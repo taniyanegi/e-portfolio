@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block title %}Education - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="education-section">
+    <h1 class="section-title">Education</h1>
+    <div class="education-timeline">
+        <div class="education-item">
+            <div class="education-content">
+                <h3>Btech in Computer Science & Engineering</h3>
+                <h4>Graphic Era Hill University</h4>
+                <p class="education-date">2022 - 2026</p>
+                <p class="education-description">
+                    I am currently pursuing my Btech in Computer Science & Engineering from Graphic Era Hill University.
+                 </p>
+                <div class="education-details">
+                    <p><strong>CGPA:</strong>8.16</p>
+                    <p><strong>Relevant Coursework:</strong></p>
+                    <ul>
+                        <li>Full Stack Web Development</li>
+                        <li>Machine Learning</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Database Management System</li>
+                        <li>Operating System</li>
+                        <li>Computer Networks</li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="education-content">
+                <h3>12th</h3>
+                <h4>Jawahar Navodaya Vidyalaya,Tehri Garhwal </h4>
+                <p class="education-date">2020 - 2021</p>
+                <p class="education-description">
+                    Description of your previous education or certification.
+                </p>
+                <div class="education-details">
+                    <p><strong>Field of Study:</strong> PCM (Physics,Chemistry,Mathematics)</p>
+                    <ul>
+                        <li>Percentage: 90.6</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="education-item">
+    <div class="education-content">
+        <h3>10th</h3>
+        <h4>Jawahar Navodaya Vidyalaya,Tehri Garhwal </h4>
+        <p class="education-date">2018 - 2019</p
+        <div class="education-details">
+            <ul>
+                <li>Percentage: 90.6</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+       
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.education-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.3;
+}
+
+.education-item {
+    position: relative;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.education-content {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: calc(50% - 2rem);
+    margin-left: auto;
+}
+
+.education-item:nth-child(even) .education-content {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.education-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.education-item:nth-child(odd) .education-content::before {
+    left: -3rem;
+}
+
+.education-item:nth-child(even) .education-content::before {
+    right: -3rem;
+}
+
+.education-content h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-content h4 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-date {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.education-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.education-details {
+    background-color: rgba(139, 92, 246, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.education-details ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.education-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-details li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .education-timeline::before {
+        left: 1rem;
+    }
+
+    .education-content {
+        width: calc(100% - 3rem);
+        margin-left: 3rem !important;
+    }
+
+    .education-content::before {
+        left: -2.5rem !important;
+        right: auto !important;
+    }
+}
+</style>
+{% endblock %} 

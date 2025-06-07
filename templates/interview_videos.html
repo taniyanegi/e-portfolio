@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+
+{% block title %}Interview Videos - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="interview-videos-section">
+    <div class="container">
+        <h1 class="section-title animate-on-scroll">Interview Videos</h1>
+        
+        <div class="video-grid animate-on-scroll">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Interview Video 1</h3>
+                    <p class="video-description">
+                        Technical interview preparation and practice session.
+                    </p>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 12.5 MB</span>
+                        <span><i class="fas fa-calendar"></i> May 18, 2024</span>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1jie52mAFEftJo635ctQ0dJC1ZSKLZ2MJ/view?usp=drive_link">
+                        <i class="fas fa-play"></i> Watch Video
+                    </a>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Interview Video 2</h3>
+                    <p class="video-description">
+                        Mock interview session focusing on problem-solving skills.
+                    </p>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 13.8 MB</span>
+                        <span><i class="fas fa-calendar"></i> May 18, 2025</span>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1jeWSmpLBnPH4f8OHfGcO1zxX5l9hcH72/view?usp=drive_link">
+                        <i class="fas fa-play"></i> Watch Video
+                    </a>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Interview Video 3</h3>
+                    <p class="video-description">
+                        System design and architecture discussion.
+                    </p>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 13.9 MB</span>
+                        <span><i class="fas fa-calendar"></i> May 18, 2025</span>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1jU6VcHDvaRjioelbv8NrCa1tSpM9hXgh/view?usp=drive_link" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-play"></i> Watch Video
+                    </a>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Interview Video 4</h3>
+                    <p class="video-description">
+                        Data structures and algorithms practice.
+                    </p>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 5.6 MB</span>
+                        <span><i class="fas fa-calendar"></i> May 18, 2025</span>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1jTbPsQFErc-4rlE_UVLyAn8-O4OCy6VI/view?usp=drive_link" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-play"></i> Watch Video
+                    </a>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Interview Video 5</h3>
+                    <p class="video-description">
+                        Behavioral interview preparation.
+                    </p>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 4.0 MB</span>
+                        <span><i class="fas fa-calendar"></i> May 18, 2025</span>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1jPWeSpwgcuxQUhnvNb5Nps9DoqV6bBGU/view?usp=drive_link" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-play"></i> Watch Video
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .interview-videos-section {
+        padding: 6rem 2rem 4rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--primary-color);
+    }
+
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .video-card {
+        background: var(--bg-secondary);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+        position: relative;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        background: var(--primary-color);
+        overflow: hidden;
+    }
+
+    .video-thumbnail img {
+    /* background-image: url("static/images/interview1.jpg"); */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    .video-card:hover .video-thumbnail img {
+        opacity: 1;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .play-button i {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin-left: 5px;
+    }
+
+    .video-card:hover .play-button {
+        background: var(--primary-color);
+    }
+
+    .video-card:hover .play-button i {
+        color: white;
+    }
+
+    .video-info {
+        padding: 1.5rem;
+    }
+
+    .video-info h3 {
+        color: var(--text-color);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .video-description {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .video-meta {
+        display: flex;
+        gap: 1rem;
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .video-meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .video-meta i {
+        color: var(--primary-color);
+    }
+
+    .btn-primary {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.8rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background: var(--hover-color);
+        transform: translateY(-2px);
+    }
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .interview-videos-section {
+            padding: 4rem 1rem 2rem;
+        }
+
+        .video-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Scroll animation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        observer.observe(element);
+    });
+});
+</script>
+{% endblock %} 

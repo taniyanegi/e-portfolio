@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+
+{% block title %}Resume - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="resume-section">
+    <div class="container">
+        <div class="resume-header">
+            <h1 class="section-title animate-on-scroll">My Resume</h1>
+            <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn btn-primary download-btn" download>
+                <i class="fas fa-download"></i> Download PDF
+            </a>
+        </div>
+
+        <div class="resume-content">
+            <!-- Personal Information -->
+            <div class="resume-section-block animate-on-scroll">
+                <h2>Personal Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <span>Taniya</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>taniyanegi1600@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8077629121</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dehradun, Uttarakhand, India</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="resume-section-block animate-on-scroll">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Bachelor of Technology in Computer Science</h3>
+                            <h4>Graphic Era University</h4>
+                            <p class="timeline-date">2021 - Present</p>
+                            <p>Currently pursuing B.Tech in Computer Science with a focus on web development and software engineering.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="resume-section-block animate-on-scroll">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend Development</h3>
+                        <ul class="skill-list">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>React.js</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <ul class="skill-list">
+                            <li>Python</li>
+                            <li>Node.js</li>
+                            <li>Flask</li>
+                            <li>RESTful APIs</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Technologies</h3>
+                        <ul class="skill-list">
+                            <li>Git & GitHub</li>
+                            <li>Docker</li>
+                            <li>VS Code</li>
+                            <li>PostgreSQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="resume-section-block animate-on-scroll">
+                <h2>Projects</h2>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <h3>E-Portfolio Website</h3>
+                        <p class="project-tech">Python, Flask, HTML, CSS, JavaScript</p>
+                        <p>A personal portfolio website showcasing my skills, projects, and achievements. Features include responsive design, dynamic content loading, and contact form integration.</p>
+                    </div>
+                    <!-- Add more projects as needed -->
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="resume-section-block animate-on-scroll">
+                <h2>Certifications</h2>
+                <div class="certifications-list">
+                    <div class="certification-item">
+                        <h3>Python Programming</h3>
+                        <p class="certification-issuer">Coursera</p>
+                        <p class="certification-date">2023</p>
+                    </div>
+                    <!-- Add more certifications as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .resume-section {
+        padding: 4rem 2rem;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .resume-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: var(--text-color);
+        margin: 0;
+    }
+
+    .download-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .resume-section-block {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .resume-section-block h2 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--bg-secondary);
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .info-item i {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+    }
+
+    .timeline {
+        position: relative;
+    }
+
+    .timeline-item {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary-color);
+    }
+
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary-color);
+    }
+
+    .timeline-content h3 {
+        color: var(--text-color);
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-content h4 {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-date {
+        color: var(--primary-color);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .skill-category h3 {
+        color: var(--text-color);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .skill-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .skill-list li {
+        padding: 0.5rem 0;
+        color: var(--text-light);
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .skill-list li::before {
+        content: '•';
+        color: var(--primary-color);
+        position: absolute;
+        left: 0;
+    }
+
+    .projects-list, .certifications-list {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .project-item, .certification-item {
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+    }
+
+    .project-item h3, .certification-item h3 {
+        color: var(--text-color);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-tech {
+        color: var(--primary-color);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .certification-issuer {
+        color: var(--text-light);
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .certification-date {
+        color: var(--primary-color);
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .resume-header {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .resume-section {
+            padding: 2rem 1rem;
+        }
+
+        .resume-section-block {
+            padding: 1.5rem;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %} 

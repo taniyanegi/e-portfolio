@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+
+{% block title %}About Me - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="about-section">
+    <div class="container">
+        <h1 class="section-title animate-on-scroll">About Me</h1>
+        
+        <div class="about-content">
+            <div class="about-text animate-on-scroll">
+                <h2>Hello! I'm <span class="highlight">Taniya</span></h2>
+                <p class="lead">A passionate Full Stack Developer with a keen eye for creating elegant solutions to complex problems.</p>
+                
+                <div class="bio">
+                    <p>I specialize in building modern web applications using Python, JavaScript, and various web technologies. With a strong foundation in both frontend and backend development, I strive to create seamless user experiences while maintaining clean and efficient code.</p>
+                    
+                    <p>My journey in software development began when I was in my 1st year of college. Since then, I have taken part in hackethon, at that time i don't know much about full stack we development , machine learning and other fields after seaching so many things on google, I have learned a lot and now I want to be a full stack developer. And now i started working on my own projects and learning new things.</p>
+                     </div>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+
+            <div class="skills-section animate-on-scroll">
+                <h3>Technical Skills</h3>
+                
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h4>Frontend</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Backend</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>SQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-server"></i>
+                                <span>Flask</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Tools & Others</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-docker"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-terminal"></i>
+                                <span>CLI</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .about-section {
+        padding: 4rem 0;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 2rem;
+    }
+
+    .about-text {
+        padding-right: 2rem;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+    }
+
+    .bio {
+        margin-bottom: 2rem;
+    }
+
+    .bio p {
+        margin-bottom: 1rem;
+    }
+
+    .skills-section {
+        background-color: var(--bg-secondary);
+        padding: 2rem;
+        border-radius: 12px;
+    }
+
+    .skills-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .skills-categories {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .skill-category h4 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    .skill-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: transform var(--transition-speed);
+    }
+
+    .skill-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .skill-item i {
+        font-size: 2rem;
+        color: var(--primary-color);
+    }
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .about-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .about-text {
+            padding-right: 0;
+        }
+
+        .skills-section {
+            padding: 1.5rem;
+        }
+    }
+</style>
+{% endblock %} 
